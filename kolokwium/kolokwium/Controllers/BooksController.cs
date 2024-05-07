@@ -8,11 +8,11 @@ namespace kolokwium.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AnimalsController : ControllerBase
+    public class BooksController : ControllerBase
     {
         private readonly IBooksRepository _booksRepository;
 
-        public AnimalsController(IBooksRepository animalsRepository)
+        public BooksController(IBooksRepository animalsRepository)
         {
             _booksRepository = animalsRepository;
         }
@@ -21,7 +21,7 @@ namespace kolokwium.Controllers
         public async Task<IActionResult> GetGenresBook(int id)
         {
             if (!await _booksRepository.DoesBookExist(id))
-                return NotFound($"Animal with given ID - {id} doesn't exist");
+                return NotFound($"book with given ID - {id} doesn't exist");
 
             var genres = await _booksRepository.GetGenresBook(id);
 
@@ -34,7 +34,6 @@ namespace kolokwium.Controllers
             await _booksRepository.AddBookWithGenres(newBookWithGenresDto);
 
             return Created(Request.Path.Value ?? "api/books", newBookWithGenresDto);
-            
         }
         
     }

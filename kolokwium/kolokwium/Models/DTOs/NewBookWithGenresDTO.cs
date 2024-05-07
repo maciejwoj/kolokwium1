@@ -4,6 +4,7 @@ namespace kolokwium.Models.DTOs;
 
 public class NewBookWithGenresDTO
 {
+    
     [Required]
     public int PK{ get; set; }
     [Required]

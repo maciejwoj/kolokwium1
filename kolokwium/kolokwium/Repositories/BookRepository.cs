@@ -30,6 +30,7 @@ public class BooksRepository : IBooksRepository
 
     public async Task<List<string>> GetGenresBook(int id)
     {
+        
         var query = @"SELECT genres.name
                     FROM books
                     JOIN books_genres AS bg ON bg.FK_book = books.PK
