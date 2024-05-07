@@ -32,3 +32,9 @@ C:\Users\s27578\Desktop\kolokwium\kolokwium\kolokwium\obj\Debug\net8.0\refint\ko
 C:\Users\s27578\Desktop\kolokwium\kolokwium\kolokwium\obj\Debug\net8.0\kolokwium.pdb
 C:\Users\s27578\Desktop\kolokwium\kolokwium\kolokwium\obj\Debug\net8.0\kolokwium.genruntimeconfig.cache
 C:\Users\s27578\Desktop\kolokwium\kolokwium\kolokwium\obj\Debug\net8.0\ref\kolokwium.dll
+C:\Users\s27578\Desktop\kolokwium\kolokwium\kolokwium\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\s27578\Desktop\kolokwium\kolokwium\kolokwium\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\s27578\Desktop\kolokwium\kolokwium\kolokwium\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\s27578\Desktop\kolokwium\kolokwium\kolokwium\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\s27578\Desktop\kolokwium\kolokwium\kolokwium\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\s27578\Desktop\kolokwium\kolokwium\kolokwium\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
