@@ -58,8 +58,47 @@ public class BooksRepository : IBooksRepository
         return genres;
     }
 
-    public Task AddBokkWothGenres(NewBookWithGenresDTO newBookWithGenresDto)
+    public async Task AddBookWithGenres(NewBookWithGenresDTO newBookWithGenresDto)
     {
-        throw new NotImplementedException();
+        var insert = @"INSERT INTO Animal VALUES(@title);
+					   SELECT @@IDENTITY AS PK;";
+        
+        await using SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Default"));
+        await using SqlCommand command = new SqlCommand();
+	    
+        command.Connection = connection;
+        command.CommandText = insert;
+        
+        command.Parameters.AddWithValue("@title", newBookWithGenresDto.Title);
+        
+        await connection.OpenAsync();
+        
+        var transaction = await connection.BeginTransactionAsync();
+        command.Transaction = transaction as SqlTransaction;
+        
+        try
+        {
+            var id = await command.ExecuteScalarAsync();
+    
+            foreach (var genre in newBookWithGenresDto.Genres)
+            {
+                command.Parameters.Clear();
+                command.CommandText = "INSERT INTO books_genres VALUES(@FK_book, @FK_genre)";
+                
+                command.Parameters.AddWithValue("@FK_book", newBookWithGenresDto.PK);
+                command.Parameters.AddWithValue("@FK_genre", genre);
+
+
+                await command.ExecuteNonQueryAsync();
+            }
+
+            await transaction.CommitAsync();
+        }
+        catch (Exception)
+        {
+            await transaction.RollbackAsync();
+            throw;
+        }
+
     }
 }

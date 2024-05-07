@@ -31,7 +31,7 @@ namespace kolokwium.Controllers
         [HttpPost]
         public async Task<IActionResult> AddBook(NewBookWithGenresDTO newBookWithGenresDto)
         {
-            await _booksRepository.AddBokkWothGenres(newBookWithGenresDto);
+            await _booksRepository.AddBookWithGenres(newBookWithGenresDto);
 
             return Created(Request.Path.Value ?? "api/books", newBookWithGenresDto);
             
