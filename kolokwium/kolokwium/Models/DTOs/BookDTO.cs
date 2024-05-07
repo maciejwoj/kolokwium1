@@ -11,5 +11,4 @@ public class GenreDTO
 {
     public int PK { get; set; }
     public string nam { get; set; } = string.Empty;
-    
 }

@@ -35,7 +35,6 @@ namespace kolokwium.Controllers
 
             return Created(Request.Path.Value ?? "api/books", newBookWithGenresDto);
         }
-        
     }
     
     

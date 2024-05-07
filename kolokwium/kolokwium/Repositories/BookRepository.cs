@@ -10,8 +10,7 @@ public class BooksRepository : IBooksRepository
     {
         _configuration = configuration;
     }
-
-
+    
     public async Task<bool> DoesBookExist(int id)
     {
         var query = "SELECT 1 FROM books WHERE PK = @ID";
